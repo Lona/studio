@@ -865,6 +865,7 @@ extension \(componentName) {
             inspectorViewVisible = false
 
             markdownViewController.content = document.content
+            markdownViewController.fileURL = document.fileURL
 
             fileNavigator.fileOutlineView = markdownViewController.outlineView
             editorViewController.contentView = markdownViewController.view

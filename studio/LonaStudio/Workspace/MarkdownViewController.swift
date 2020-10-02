@@ -36,6 +36,8 @@ class MarkdownViewController: NSViewController {
 
     override var undoManager: UndoManager? { return nil }
 
+    public var fileURL: URL?
+
     public var editable: Bool = true
 
     public var preview: Bool = true
@@ -138,6 +140,16 @@ class MarkdownViewController: NSViewController {
             }
         }
 
+        contentView.transformImageURL = { url in
+            let string = url.absoluteString
+
+            if string.starts(with: "/") {
+                return URL(string: LonaModule.current.url.absoluteString + String(string.dropFirst())) ?? url
+            }
+
+            return url
+        }
+
         // When visible rows change, select the last header before the first visible row in the outline view
         contentView.onChangeVisibleRows = { [unowned self] rows in
             if self.isSelectingItem { return }
@@ -206,7 +218,7 @@ extension MarkdownViewController {
         blocks.forEach { block in
             switch block.content {
             case .tokens:
-                let logicEditor = block.view as! LogicEditor
+                let logicEditor = contentView.view(for: block) as! LogicEditor
 
                 logicEditor.formattingOptions = module.formattingOptions
 
