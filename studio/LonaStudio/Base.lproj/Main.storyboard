@@ -98,6 +98,12 @@
                                                 <action selector="saveDocument:" target="Ady-hI-5gd" id="teZ-XB-qJY"/>
                                             </connections>
                                         </menuItem>
+                                        <menuItem title="Clear Recently Opened" id="KSL-RZ-93J">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="oA4-ab-CJd"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
