@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -79,8 +79,7 @@
                                                         </connections>
                                                     </menuItem>
                                                     <menuItem isSeparatorItem="YES" id="bDQ-7W-4lK"/>
-                                                    <menuItem title="Workspace" id="J73-fs-AT6">
-                                                        <modifierMask key="keyEquivalentModifierMask"/>
+                                                    <menuItem title="Workspace" keyEquivalent="N" id="J73-fs-AT6">
                                                         <connections>
                                                             <action selector="newWorkspace:" target="Ady-hI-5gd" id="vhM-gu-28e"/>
                                                         </connections>

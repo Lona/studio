@@ -135,7 +135,7 @@ class OpenWorkspaceViewController: NSViewController {
                 })
             }
             screen.onClickLocalButton = {
-                guard let url = WelcomeWindow.openWorkspaceDialog() else { return }
+                guard let url = Workspace.openWorkspaceDialog() else { return }
 
                 DocumentController.shared.openDocument(withContentsOf: url, display: true)
             }

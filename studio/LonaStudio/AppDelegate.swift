@@ -120,6 +120,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         welcomeWindow.close()
     }
 
+    @IBAction func newWorkspace(_ sender: AnyObject) {
+        var setup = Workspace.createWorkspaceSetupWindow()
+        setup.window.makeKeyAndOrderFront(nil)
+        setup.window.center()
+        setup.onCancel = { setup.window.close() }
+        setup.onComplete = { setup.window.close() }
+    }
+
     /*  Create a new component by duplicating the contents of an existing component
         into a blank document, and opening the document.
     */
