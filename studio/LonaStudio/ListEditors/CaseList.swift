@@ -58,7 +58,7 @@ class CaseList {
                     return CSStatementView(frame: NSRect.zero, components: [])
                 }
 
-                let caseTypeVariant = CSType.variant(tags: ["Case", "Import list"])
+                let caseTypeVariant = CSType.makeVariant(tags: ["Case", "Import list"])
                 let caseTypeValue = CSUnitValue.wrap(
                     in: caseTypeVariant,
                     tagged: item.caseType.typeName == "entry" ? "Case" : "Import list")

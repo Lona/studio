@@ -183,7 +183,7 @@ class DictionaryEditor: NSView, CSControl {
     func remainingKeysEnum(from dictionary: CSValue, ensuringOption currentKey: String? = nil) -> CSType {
         let values: [String] = remainingKeys(from: dictionary, ensuringOption: currentKey).map({ $0 })
 
-        return CSType.variant(tags: values)
+        return CSType.makeVariant(tags: values)
     }
 
     static func listValue(from dictionary: CSValue) -> [DictionaryItem] {

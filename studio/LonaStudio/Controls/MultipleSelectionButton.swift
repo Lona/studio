@@ -115,7 +115,7 @@ class MultipleSelectionButton: NSButton, NSPopoverDelegate {
             let frame = NSRect(x: 0, y: 0, width: 2000, height: 26)
 
             let itemTitle = self.options[item.value]
-            let availableOptionsType = CSType.variant(tags: availableOptions.map({ self.options[$0] }) + [itemTitle] )
+            let availableOptionsType = CSType.makeVariant(tags: availableOptions.map({ self.options[$0] }) + [itemTitle] )
             let components: [CSStatementView.Component] = [
                 .value("value", CSUnitValue.wrap(in: availableOptionsType, tagged: itemTitle), [])
             ]

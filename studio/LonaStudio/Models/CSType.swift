@@ -275,7 +275,7 @@ indirect enum CSType: Equatable, CSDataSerializable, CSDataDeserializable {
         }
     }
 
-    static func variant(tags: [String]) -> CSType {
+    static func makeVariant(tags: [String]) -> CSType {
         return .variant(tags.map { ($0, .unit) })
     }
 
@@ -402,7 +402,7 @@ indirect enum CSType: Equatable, CSDataSerializable, CSDataDeserializable {
             LonaModule.current.types.map({ $0.toString() }) +
             CSUserTypes.types.map({ $0.toString() })
 
-        return CSType.variant(tags: values)
+        return CSType.makeVariant(tags: values)
     }
 
     static func namedParameterType() -> CSType {
@@ -506,7 +506,7 @@ extension CSType {
             ])
     }
 
-    static let accessLevel = CSType.variant(tags: ["private", "internal", "public"])
+    static let accessLevel = CSType.makeVariant(tags: ["private", "internal", "public"])
     static let platformSpecificString = CSType(platformSpecificTypeWithContentType: CSType.string)
     static let platformSpecificAccessLevel = CSType(platformSpecificTypeWithContentType: CSType.accessLevel)
 }
@@ -524,9 +524,9 @@ let CSComponentType = CSType.named("Component", .any)
 let CSHandlerType = CSType.function([], .undefined)
 let CSEmptyRecordType = CSType.dictionary([:])
 let CSEmptyVariantType = CSType.variant([])
-let CSBorderStyleType = CSType.named("BorderStyle", CSType.variant(tags: ["solid", "dotted", "dashed"]))
+let CSBorderStyleType = CSType.named("BorderStyle", CSType.makeVariant(tags: ["solid", "dotted", "dashed"]))
 
-let CSComparatorType = CSType.variant(tags: [
+let CSComparatorType = CSType.makeVariant(tags: [
     "equal to",
     "not equal to",
     "greater than",
